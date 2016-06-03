@@ -1,0 +1,305 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="lib/js/fancybox/jquery.fancybox.css">
+		<link rel="stylesheet" href="css/theme/simple.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/tomorrow.css">
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+	</head>
+	<body>
+		<div class="reveal">
+
+			<div class="slides">
+
+				<section id="welcome">
+					<h1>JavaScript Fundamentals</h1>
+					<hr>
+		      <p>JavaScript is a popular programming language which originated as the standard
+		       way web browsers add interactivity to an otherwise
+		       static web page.</p>
+					 <p>Throughout this tutorial you will learn about some of the basics JavaScript. </p>
+				</section>
+
+				<section id="code-examples">
+					<h3>Code Examples</h3>
+					<hr>
+					<p>Some slides will have examples of JavaScript code with an explanation of what's being demonstrated.</p>
+					<pre><code data-trim>
+function myFunc(){
+	return 'I am some JavaScript code!';
+}</code></pre>
+				<p>For example, the above code will create a <strong>function</strong> that returns a <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">string.</a></p>
+				</section>
+
+				<section id="running-code">
+					<h3>Runnable code</h3>
+					<hr>
+					<p>Other slides will allow you to <strong>edit</strong> and then run code to see what the resulting output is.</p>
+					<pre><code data-trim class="javascript" contenteditable="">
+console.log("I can count to ten!");
+for(var i=1; i<11; i++){
+	console.log(i);
+}</code></pre>
+					<button class="execute">Run Code</button>
+				</section>
+
+				<section id="solving-problems">
+					<h3>Solving problems</h3>
+					<hr>
+					<p>There will also be problems to solve which will give you feedback if your code doesn't produce the right output.</p>
+					<pre><code data-trim class="javascript" contenteditable="">
+var score = 76;
+
+console.log(score > 80 ? "You passed" : "You failed");
+					</code></pre>
+					<button class="test" data-expect="You passed" data-help="Try changing the value of <strong>score</strong> to a number larger than 80 :)">Run Code</button>
+
+				</section>
+
+				<section id="complex-problems">
+					<p>Some problems will be more complex, requiring a <a href="https://developer.mozilla.org/en-US/docs/Glossary/Function">function</a> to be defined that satisfies a number of test cases. </p>
+					<pre><code data-trim class="javascript" contenteditable="">
+function sumAllNumbers(){
+	return Array.prototype.slice.call(arguments).reduce(function(p,n){
+		return p+n;
+	});
+}</code></pre>
+					<button class="function-test">Run Code</button>
+					<table class="test-cases" data-function="sumAllNumbers">
+						<thead>
+							<tr>
+								<th align="left">Test case</th>
+								<th>Expected result</th>
+								<th>Outcome</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr data-arguments='[1,2,3]' data-expect="6">
+								<td align="left">sumAllNumbers(1,2,3)</td>
+								<td>6</td>
+								<td><span></span></td>
+							</tr>
+							<tr data-arguments='[2,3]' data-expect="5">
+								<td align="left">sumAllNumbers(2,3)</td>
+								<td>5</td>
+								<td><span></span></td>
+							</tr>
+							<tr data-arguments='[56,44,100,300]' data-expect="500">
+								<td align="left">sumAllNumbers(56,44,100,300)</td>
+								<td>500</td>
+								<td><span></span></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section>
+					<section data-markdown id="extrainfo">
+						<script type="text/template">
+							###Additional information
+							---
+							You may notice a arrow pointing down in the bottom right hand corner of some slides.  This indicates that there is another slide with additional information on this topic.
+						</script>
+					</section>
+					<section id="extrainfo-more">
+						<p>For example, there might be some further explanations about the code or links to helpful resources.</p>
+					</section>
+				</section>
+
+				<section data-markdown id="getstarted">
+					<script type="text/template">
+					###Let's get started!
+					---
+					- You are encouraged to experiment with the code examples and try different things.
+					- Take notes of anything new that you learn or topics you wish to be explained further by your tutor.
+					</script>
+				</section>
+
+				<section data-transition="convex-in slide-out" data-background="rgb(93, 182, 97)" data-markdown id="helloworld">
+				  <script type="text/template">
+###Hello World!
+---
+One of the first things programmers like to do when learning a new language is to write the classic **Hello World!** program. This is usually to check that their computer is set up correctly and it is a good way of understanding some basic [syntax](https://en.wikipedia.org/wiki/Syntax_%28programming_languages%29).
+				  </script>
+				</section>
+
+				<section id="helloworld-example" data-background="rgb(93, 182, 97)">
+					<p>In JavaScript, the program is simple; just one line.</p>
+					<p>Try running the program to see the result.  You can edit the <strong>Hello World!</strong> text to display any message you like.</p>
+					<pre><code data-trim contenteditable="">
+console.log("Hello World!");
+					</code></pre>
+					<button class="execute">Run code</button>
+				</section>
+
+				<section id="helloworld-explanation" data-background="rgb(93, 182, 97)">
+					<p>Great job on running your first program!</p>
+					<pre><code data-trim>
+console.log("Hello World!");
+					</code></pre>
+					<p>There are a few of things to understand from this really simple first program:</p>
+					<ul>
+						<li><strong>console.log</strong> is a JavaScript function used to display content to the user.</li>
+						<li><strong>Hello World!</strong> is a <strong>string</strong> and must be enclosed in double quotes " "</li>
+						<li>Each line of a JavaScript program is referred to as a <strong>statement</strong> and must end with a semi-colon ;</li>
+					</ul>
+				</section>
+
+				<section data-markdown data-background="rgb(101, 130, 164)" id="variables">
+				  <script type="text/template">
+###Variables
+---
+In JavaScript, a variable is a name given to a storage location in your computer's memory. This location can then be used to store a value such as a user's name, pasword or age.
+
+The value stored in the variable can be accessed by your program and also updated. For example if the user's password changes, the variable storing that data can be overwritten with the new password.
+				  </script>
+				</section>
+
+				<section id="variables-define" data-background="rgb(101, 130, 164)">
+					<p>To define a variable in JavaScript you use the <strong>var</strong> keyword followed by the variable name and then a value is assigned to it by using an equals sign.</p>
+					<pre><code data-trim>
+var myName = "James";
+var myPassword;
+var myAge = 21;
+					</code></pre>
+					<p>All three examples above are correct ways of defining variables.</p>
+					<p>You might notice that the <strong>myPassword</strong> variable doesn't have a value assigned to it.  That's OK, it will just be assigned the special value of <strong>undefined</strong> until you give it a value.</p>
+					<p>Don't forget: a string of letters must be enclosed in double quotes.</p>
+				</section>
+
+				<section id="variables-use" data-background="rgb(101, 130, 164)">
+					<p>When you want to use a variable, you simply reference it's name in another part of your program.</p>
+					<pre><code data-trim>
+var age = 21;
+console.log("You are " + age + " years old");
+age = 22;
+					</code></pre>
+				</section>
+
+				<section id="variables-exercise1" data-background="rgb(101, 130, 164)">
+					<h3>Exercise</h3>
+					<hr>
+					<p>Define a variable called <strong>myName</strong> in the code example below.  When you run the code, you will see a customised greeting being displayed!</p>
+					<pre><code data-trim contenteditable="">
+// Define your variable here
+
+// This outputs the value of your variable
+console.log("Hi " + myName + "! pleased to meet you!");
+					</code></pre>
+					<button class="execute">Run code</button>
+				</section>
+				<!-- End of slides  -->
+		</div>
+	</div>
+		<script src="https://togetherjs.com/togetherjs-min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+		<script src="lib/js/fancybox/jquery.fancybox.pack.js"></script>
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+		<script src="plugin/highlight/highlight.js"></script>
+		<script src="lib/js/console.js"></script>
+		<script src="lib/js/expect.js"></script>
+		<script src="lib/js/jquery.caret.js" charset="utf-8"></script>
+		<script>
+		function insertTextAtCursor(text) {
+    var sel, range, html;
+    if (window.getSelection) {
+        sel = window.getSelection();
+        if (sel.getRangeAt && sel.rangeCount) {
+            range = sel.getRangeAt(0);
+            range.deleteContents();
+            range.insertNode( document.createTextNode(text) );
+        }
+    } else if (document.selection && document.selection.createRange) {
+        document.selection.createRange().text = text;
+    }
+}
+		$(function () {
+
+			$('.notes-show').on('click', function(){
+				$(this).parent().find('.notes').slideToggle();
+			});
+
+			$('code').on('keydown', function(e){
+				if (e.keyCode == 9){ // Handle tabs
+					e.preventDefault();
+					insertTextAtCursor('\t');
+				}
+				if(e.ctrlKey && e.keyCode === 13){ // Use CTRL + Enter to run test
+					$(this).parent().parent().find('button').click();
+
+				}
+			});
+
+			$('.function-test').on('click', function(){
+				var code = '(' + $(this).parent().find("code").text() +')';
+				var test_cases = $(this).parent().find('table tbody tr');
+				for(var i=0; i<test_cases.length; i++){
+					var theseArgs = Array.prototype.slice.call($(test_cases[i]).data('arguments'));
+			 		if(new expect(eval(code).apply(this, theseArgs)).toEql($(test_cases[i]).data('expect'))){
+						$(test_cases[i]).find('span').html('&#10004; Passed').attr('class','pass');
+					} else{
+						$(test_cases[i]).find('span').html(' 	&#10008; Failed').attr('class','fail');
+					}
+				}
+			});
+
+			$('.test').on('click', function(){
+				var code = $(this).parent().find("code").text() + "console.log();";
+				try{
+					eval(code);
+					var expectedResult = $(this).data('expect');
+					if(new expect(consoleOutput.join('')).toEql('' + expectedResult)){
+						$.fancybox( '<div class="feedback"><h2 class="pass">&#10004; Correct!</h2></div>');
+					} else{
+						$.fancybox( '<div class="feedback"><h2 class="fail">&#10008; Try again!</h2><p>' + $(this).data('help') +"</p></div>");
+					}
+				} catch(error){
+					$.fancybox( '<pre style="color: red;" class="codeOutput">' + error + '</pre>', {autoSize: false} );
+				}
+				consoleOutput = [];
+			});
+
+			$('.execute').on('click', function(){
+				var code = $(this).parent().find("code").text() + "console.log();";
+				try{
+					eval(code);
+					$.fancybox( '<pre class="codeOutput">' + consoleOutput.join('\n') + '</pre>', {autoSize: false} );
+				} catch(error){
+					$.fancybox( '<pre style="color: red;" class="codeOutput">' + error + '</pre>', {autoSize: false} );
+				}
+				consoleOutput = [];
+			});
+	});
+</script>
+		<script>
+			Reveal.initialize({
+				history: true,
+
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function(){ hljs.initHighlightingOnLoad();}}
+				]
+			});
+
+		</script>
+	</body>
+</html>
